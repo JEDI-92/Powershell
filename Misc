@@ -1,0 +1,30 @@
+[CURL]
+
+CURL -Credential <URI>
+
+[INVOKE-WEBREQUEST]
+
+$primerest = Invoke-RestMethod -SkipCertificateCheck -Uri "https://username:password@server.customer.co.uk/webacs/api/v4/data/Alarms/1285580132.xml" -Method Get
+$primeweb = Invoke-WebRequest -SkipCertificateCheck https://prime01.sytner.co.uk/webacs/api/v4/data/Alarms/1285580132
+$primewebpass = Invoke-WebRequest -SkipCertificateCheck https://username:password@server.customer.co.uk/webacs/api/v4/data/Alarms/1285580132
+
+[Top 20 Largest Files]
+
+dir c:\ -recurse -erroraction silentlycontinue | sort length -descending | select -first 20
+dir c:\ -recurse -erroraction silentlycontinue | sort lastwritetime -descending | select -first 20
+
+[Shares]
+
+net share
+
+[WLAN Report]
+
+netsh wlan show wlanreport
+
+[Test port]
+
+tnc 1.2.3.4 -port 80
+
+[Robocopy]
+
+robocopy path1 path2 /MIR /SEC /SECFIX
